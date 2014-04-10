@@ -22,35 +22,43 @@
 
   <body>
     <div class="container">
-
+      <!-- project header -->
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li ><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li class="active" id="addMeetingButton"><a href="#">Home</a></li>
+          <li ><a href="#" data-toggle="collapse" data-target="#demo2">Registration</a></li>
+          <li><a href="#" data-toggle="collapse" data-target="#demo">Sign in</a></li>
         </ul>
         <h3 class="text-muted">Project name</h3>
       </div>
 
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        <h3 class="panel-title"> <img src="favicon.ico"> Join me for KC restarant week</h3>
+      <div id="demo" class="collapse">
+        <form class="form-signin" role="form">
+          <h2 class="form-signin-heading">Please sign in</h2>
+          <input type="email" class="form-control" placeholder="Email address" required="" autofocus="">
+          <input type="password" class="form-control" placeholder="Password" required="">
+          <label class="checkbox">
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
       </div>
-      <div class="panel-body">
-        KC restarant week is awesome, it has Asian food, American fast food, and Itanlian food.
-        <img src="./img/retaurant.png">
-      </div>
-      <div class="panel-footer"><button>Join</button> <button>cancel</button></div>
-    </div>
 
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        <h3 class="panel-title">Panel title</h3>
+      <div id="demo2" class="collapse">
+        <form class="form-signin" role="form">
+          <h2 class="form-signin-heading">Please register</h2>
+          <input type="email" class="form-control" placeholder="Email address" required="" autofocus="">
+          <input type="password" class="form-control" placeholder="Password" required="">
+          <label class="checkbox">
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
       </div>
-      <div class="panel-body">
-        Panel content
-      </div>
-      <div class="panel-footer">Panel footer</div>
+
+    <!-- project body -->
+    <div id="panelHolder">
+
     </div>
 
 
@@ -67,9 +75,39 @@
     <!--Javascript libs -->
     <script src="./js/jquery-2.1.0.js"></script>
     <script src="./js/bootstrap.js"></script>
+    <script src="./js/myjs.js"></script>
 
     <!--Scripts -->
     <script type="text/javascript">
+    var title = 'Join me for KC restarant week'
+
+    var message = 'KC restarant week is awesome, it has Asian food, American fast food, and Itanlian food.'
+
+    var imgUrl = './img/retaurant.png'
+
+    var count = 0;
+
+     $( "#addMeetingButton" ).click(function() {
+        apendPanel(title, count, message, imgUrl);
+     });
+
+//     $( "#addMeetingButton" ).click(function() {
+//       count++;
+// $("#panelHolder").append("<div class='panel panel-info'><div class='panel-heading'><h3 class='panel-title'> <img src='favicon.ico'>" + title + count + "</h3></div><div class='panel-body'>" + message + "<img src=" + imgUrl + "></div><div class='panel-footer'><button>Join</button> <button>cancel</button></div></div>");
+// });
+      //  $("
+      // <div class='panel panel-info'>
+      //   <div class='panel-heading'>
+      //     <h3 class='panel-title'> <img src='favicon.ico'> Join me for KC restarant week</h3>
+      //   </div>
+      //   <div class='panel-body'>
+      //     KC restarant week is awesome, it has Asian food, American fast food, and Itanlian food.
+      //     <img src='./img/retaurant.png'>
+      //   </div>
+      //   <div class='panel-footer'><button>Join</button> <button>cancel</button></div>
+      // </div>
+      // ").appendTo("#panelHolder");
+
 
     </script>
   </body>
