@@ -11,6 +11,7 @@ package com.chao.apps.meetee.datamodel;
  * String city;
  * String state;
  * String zipCode;
+ * Long addressId;
  * 
  * @author chaoshen
  *
@@ -22,7 +23,7 @@ public class Address {
 	private String city;
 	private String state;
 	private String zipcode;
-	private int addressId;
+	private Long addressId;
 	
 	/**
 	 * @return the streetAddress1
@@ -87,14 +88,25 @@ public class Address {
 	/**
 	 * @return the addressId
 	 */
-	public int getAddressId() {
+	public Long getAddressId() {
 		return addressId;
 	}
 	/**
 	 * @param addressId the addressId to set
 	 */
-	public void setAddressId(int addressId) {
+	public void setAddressId(Long addressId) {
 		this.addressId = addressId;
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Address [streetAddress1=" + streetAddress1
+				+ ", streetAddress2=" + streetAddress2 + ", city=" + city
+				+ ", state=" + state + ", zipcode=" + zipcode + ", addressId="
+				+ addressId + "]";
 	}
 
 }
